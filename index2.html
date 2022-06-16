@@ -10,7 +10,7 @@
 <body>
     <div class="navigation">
         <ul>
-            <li class="list active">
+            <li class="list active" id="1">
                 <a href="#">
                     <span class="icon">
                         <ion-icon name="home-outline"></ion-icon>
@@ -18,7 +18,7 @@
                     <span class="text">Home</span>
                 </a>
             </li>
-            <li class="list">
+            <li class="list" id="2">
                 <a href="#">
                     <span class="icon">
                         <ion-icon name="person-outline"></ion-icon>
@@ -26,14 +26,14 @@
                     <span class="text">Profile </span>
                 </a>
             </li>
-            <li class="list">
+            <li class="list" id="3">
                 <a href="#">
                     <span class="icon">
                         <ion-icon name="chatbubble-outline"></ion-icon>
                     </span>
                     <span class="text">Messages</span>
                 </a>
-                <li class="list">
+                <li class="list" id="4">
                     <a href="#">
                         <span class="icon">
                             <ion-icon name="camera-outline"></ion-icon>
@@ -41,7 +41,7 @@
                         <span class="text">Photos </span>
                     </a>
                 </li>
-                <li class="list">
+                <li class="list" id="5">
                     <a href="#">
                         <span class="icon">
                             <ion-icon name="settings-outline"></ion-icon>
@@ -53,15 +53,58 @@
             <div class="indicator"></div>
         </ul>
 <script>
+
     const list = document.querySelectorAll('.list');
+    // desaparecer el indicador
+    var indicator = document.querySelector(".indicator")
+    indicator.style.display = "none"
+
     function activeLink(){
+        indicator.style.display = "block"
         list.forEach((item) =>
-        item.classList.remove('active'));
-        this.classList.add('active');    
+          item.classList.remove('active')
+
+        );
+         let text = this.querySelector(".text")
+
+          this.classList.add('active');
+          // Que item esta activo? 1,2,3,4,5,6
+            //alert(this.id)
+          // dependiendo del item se cambia el porcentaje
+
+
+
+          switch(this.id) {
+            case "1":
+            // 6.6
+            text.style.background = "red";
+            indicator.style.left = "6.6%"
+
+            break;
+            case "2":
+            // 24
+            indicator.style.left = "24%"
+            break;
+            case "3":
+            // 41
+            indicator.style.left = "41%"
+            break;
+            case "4":
+            // 59
+            indicator.style.left = "59%"
+            break;
+            case "5":
+            // 7.6
+            indicator.style.left = "76.6%"
+            break;
+            default:
+
+          }
+
         }
         list.forEach((item) =>
-        item.addEventListener('click',activeLink));
-</script>    
+          item.addEventListener('click',activeLink));
+</script>
     </div>
 <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
 <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>

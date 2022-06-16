@@ -23,7 +23,7 @@ body{
     justify-content: center;
     align-items: center;
     border-radius: 10px;
-    
+
 }
 .navigation ul {
     display: flex;
@@ -38,7 +38,7 @@ body{
     height: 70px;
     z-index: 1;
 
-    
+
 
 }
 .navigation ul li a{
@@ -68,7 +68,7 @@ body{
 .navigation ul li:active a .icon{
     transform: translateY(-35px);
 }
-.navigation ul li a .text{ 
+.navigation ul li a .text{
     position: absolute;
     font-weight: 400;
     font-size: 0.75em;
@@ -91,8 +91,8 @@ body{
     background: #29fd53;
     border-radius: 50%;
     border: 6px solid var(--clr);
-    
-    
+
+
 
 
 
@@ -131,4 +131,3 @@ transform: translateX(calc(70px * 0));
 .active ~ .indicator{
 transform: translateX(calc(70px * 1));
 }
-
